@@ -9,7 +9,6 @@ function downloadImagesFromUrl(url) {
   const { hostname } = new URL(url);
   const downloadFolderPath = path.join(__dirname, "allImages", hostname, `downloaded_images_${timestamp}`);
   const textFilePath = path.join(__dirname, `downloaded_images_${timestamp}.txt`);
-  var counter = 0;
 
   // Create the download folder if it doesn't exist
   fs.mkdirSync(downloadFolderPath, { recursive: true });
@@ -46,7 +45,7 @@ function downloadImagesFromUrl(url) {
   }).catch(error => {
     console.log(error);
   }).finally(() => {
-    console.log(`Downloaded ${counter} images to folder ${downloadFolderPath}.`);
+    console.log(`All images Downloaded to folder ${downloadFolderPath}.`);
     console.log(`Image names written to file ${textFilePath}.`);
   });
 }
